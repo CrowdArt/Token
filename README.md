@@ -12,3 +12,7 @@
 ##
 * [Onboarding 2.0 Community Page](https://josh-coinbase.cs14.force.com/onboarding)
 * []()
+### Notes
+* Application owner object - coinbase inc questionnaire (applying in us)
+* Rules engine - sync up with Josh
+* Placeholder for Coinbase in or Coinbase UK
