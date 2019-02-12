@@ -16,3 +16,10 @@
 * Application owner object - coinbase inc questionnaire (applying in us)
 * Rules engine - sync up with Josh
 * Placeholder for Coinbase in or Coinbase UK
+
+## Rule Engine
+Common uses:
+* Custom Object Assignment - lets you assign any record in Salesforce at any time with your own logic. Build custom rules sets to support complex processes.
+* User Management - Ideal for organizations with Communities, an automated way to add users to Public and Chatter groups, and allows you to manage the creation of new groups.
+* Topic Assignements - With flexible customization, this BREeze capability makes it easy for teams to gain all the advantages offered by Salesforce’s Topics functionality – without writing code.
+* Complex Record Assignment - consolidate multiple workflows into a single rules set that’s simple to manage – and doesn’t eat into your workflow rule allocation.
