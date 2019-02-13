@@ -23,3 +23,9 @@ Common uses:
 * User Management - Ideal for organizations with Communities, an automated way to add users to Public and Chatter groups, and allows you to manage the creation of new groups.
 * Topic Assignements - With flexible customization, this BREeze capability makes it easy for teams to gain all the advantages offered by Salesforce’s Topics functionality – without writing code.
 * Complex Record Assignment - consolidate multiple workflows into a single rules set that’s simple to manage – and doesn’t eat into your workflow rule allocation.
+
+### Sample Architecture
+* Rule-Master object
+* Rule Criteria - Child object
+* Rule Result - Child object.
+* To update one record, trigger will call this method and loop through all the rules, rule criteria and update rule result value on the field.
