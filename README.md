@@ -8,7 +8,6 @@
 * https://developer.salesforce.com/forums/?id=9060G000000I2hzQAC
 * http://sfdcmonkey.com/2016/12/05/how-to-fetch-picklist-value-from-sobject-and-set-in-uiinputselect/
 * https://developer.salesforce.com/docs/atlas.en-us.uiapi.meta/uiapi/ui_api_resources_picklist_values.htm
-
 ##
 * [Onboarding 2.0 Community Page](https://josh-coinbase.cs14.force.com/onboarding)
 ### Notes
