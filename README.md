@@ -33,6 +33,11 @@ https://onb-coinbase.cs97.force.com/onboarding/s/
 * Register
 * Register Entity Details
 * Search
+### Controllers
+* lightning self reg class and the register entity details class
+* onb_ApplicationFormController
+* registerEntityDEtails
+
 
 
 ## Links
