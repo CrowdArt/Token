@@ -27,3 +27,18 @@ Common uses:
 * Rule Criteria - Child object
 * Rule Result - Child object.
 * To update one record, trigger will call this method and loop through all the rules, rule criteria and update rule result value on the field.
+### Onboarding Application
+#### Pages:
+* Check Password
+* Create Record
+* Error
+* Forgot Password
+* Home
+* HomeDashboard
+* Login
+* Login Error
+* Onboarding Application Form
+* Onboarding Application Owners
+* Register
+* Register Entity Details
+* Search
