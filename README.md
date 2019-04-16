@@ -21,6 +21,7 @@ Common uses:
 * Rule Result - Child object.
 * To update one record, trigger will call this method and loop through all the rules, rule criteria and update rule result value on the field.
 ### Onboarding Application
+https://onb-coinbase.cs97.force.com/onboarding/s/
 #### Pages:
 * Check Password
 * Create Record
@@ -35,6 +36,7 @@ Common uses:
 * Register
 * Register Entity Details
 * Search
+
 
 ## Links
 * https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_dynamic_describe_objects_understanding.htm
