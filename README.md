@@ -45,6 +45,8 @@ https://onb-coinbase.cs97.force.com/onboarding/s/
 * [Salesforce Extensions for VS Code](https://developer.salesforce.com/tools/extension_vscode)
 * [Getting Started with Scratch Orgs](http://salesforce.vidyard.com/watch/WQzCAyBR8FiJQ8yVXWDwWR)
 * [Set Java 8 Platform](http://salesforce.vidyard.com/watch/WQzCAyBR8FiJQ8yVXWDwWR)
+* [Harnessing the Power of Salesforce through CLI](http://salesforce.vidyard.com/watch/M3APX9oM72RDUoiqNi8yyg)
+* 
 
 ## Links
 * https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_dynamic_describe_objects_understanding.htm
