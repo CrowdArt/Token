@@ -42,6 +42,9 @@ https://onb-coinbase.cs97.force.com/onboarding/s/
 * create a package (logical set of code)
 * [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.218.0.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
 * [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.218.0.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+* [Salesforce Extensions for VS Code](https://developer.salesforce.com/tools/extension_vscode)
+* [Getting Started with Scratch Orgs](http://salesforce.vidyard.com/watch/WQzCAyBR8FiJQ8yVXWDwWR)
+* 
 
 ## Links
 * https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_dynamic_describe_objects_understanding.htm
