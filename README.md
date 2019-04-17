@@ -37,8 +37,11 @@ https://onb-coinbase.cs97.force.com/onboarding/s/
 * lightning self reg class and the register entity details class
 * onb_ApplicationFormController
 * registerEntityDEtails
-
-
+## Version Control System - VCS
+### Source of Truth
+* create a package (logical set of code)
+* [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.218.0.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
+* [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.218.0.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
 
 ## Links
 * https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_dynamic_describe_objects_understanding.htm
