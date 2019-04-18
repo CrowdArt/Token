@@ -1,6 +1,6 @@
 # Coinbase
 * [Apex Unit Tests](#apex-unit-tests)
-  * [Field History Tracking in Test Methods](#field-history-trackinbg-in-test-methods)
+ * [Field History Tracking in Test Methods](#field-history-tracking-in-test-methods)
 * [Notes](#notes)
 
 ## Apex Unit Tests
