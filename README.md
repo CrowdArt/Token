@@ -1,6 +1,7 @@
 # Coinbase - Salesforce Org
 * [Apex Unit Tests](#apex-unit-tests)
  * [Field History Tracking in Test Methods](#field-history-tracking-in-test-methods)
+* [Git](#git)
 * [Notes](#notes)
 
 ## Apex Unit Tests
@@ -13,6 +14,13 @@ Unit tests are class methods that verify whether a particular piece of code is w
   * test methods must be defined in test classes, that is, classes annotated with `@isTest`.
 ### Field History Tracking in Test Methods
 Field history tracking records (such as AccountHistory) can't be created in test methods because they require other sObject records to be committed first (for example, Account).
+## Git
+Pull requests: A pull request is a package of commits you’re requesting to be merged into the default branch. A pull request provides a place to discuss the changes you’re proposing and invite other team members to comment and complete code reviews. Pull requests also help you see the result of automated tests and many other cool integrations.
+#### Run Unit Tests
+* Some or all methods in a specific class
+* Some or all methods in a set of classes
+* A predefined suite of classes, known as a test suite
+* All unit tests in your org
 ## Notes
 * Application owner object - coinbase inc questionnaire (applying in us)
 * Rules engine - sync up with Josh
