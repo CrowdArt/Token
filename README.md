@@ -1,5 +1,7 @@
 # Coinbase
 * [Apex Unit Tests](#apex-unit-tests)
+  * [Field History Tracking in Test Methods](#field-history-trackinbg-in-test-methods)
+* [Notes](#notes)
 
 ## Apex Unit Tests
 Unit tests are class methods that verify whether a particular piece of code is working properly. Unit test methods:
