@@ -1,5 +1,14 @@
 # Coinbase
+* [Apex Unit Tests](#apex-unit-tests)
 
+## Apex Unit Tests
+Unit tests are class methods that verify whether a particular piece of code is working properly. Unit test methods:
+  * take no arguments, 
+  * commit no data to the database, 
+  * send no emails, and 
+  * are flagged with the testMethod keyword or 
+  * the `@isTest` annotation in the method definition. Also, 
+  * test methods must be defined in test classes, that is, classes annotated with `@isTest`.
 ### Notes
 * Application owner object - coinbase inc questionnaire (applying in us)
 * Rules engine - sync up with Josh
