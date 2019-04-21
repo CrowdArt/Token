@@ -35,8 +35,14 @@ Every class has three components to it: [1] Attributes, [2] Methods, and [3] Con
 1. Attributes - Attributes are the variables that describe your class. Your class’s attributes can be any data type, collection, or even class! Think of attributes to be just like custom fields, except they exist on your class instead of a Salesforce object.  Classes referenced would have to already exist for the class to save!
 2. Methods - Methods are the actions available to objects of your class.  You define the logic inside each method, what inputs are required (if any), and what value is returned (if any). Here’s the general template:
 ```Apex
-public ReturnType MethodName(Input1Type, )
+public ReturnType MethodName(Input1Type Input1Variable) {
+  // Method logic goes here
+}
 ```
+* `ReturnType` is the data type, collection, or class that’s returned when your method is called. 
+* If you don’t want your method to return anything, use `void`.
+* `MethodName` is whatever you want to name your method
+* 
 ## Rule Engine
 Common uses:
 * Custom Object Assignment - lets you assign any record in Salesforce at any time with your own logic. Build custom rules sets to support complex processes.
@@ -82,6 +88,7 @@ https://onb-coinbase.cs97.force.com/onboarding/s/
 * [Understanding the Github Flow](https://guides.github.com/introduction/flow/)
 
 ## Links
+* [Salesforce Developer Centers](https://developer.salesforce.com/developer-centers/)
 * [Professional & Minimal WordPress Themes by Alien](https://alienwp.com/)
 * https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_dynamic_describe_objects_understanding.htm
 * http://sfdcmonkey.com/2018/02/25/fetch-multi-picklist-values-lightningduallistbox-component/
