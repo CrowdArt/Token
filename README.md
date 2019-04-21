@@ -30,7 +30,8 @@ Pull requests: A pull request is a package of commits you’re requesting to be 
 * Placeholder for Coinbase in or Coinbase UK
 
 ## OOP
-
+Every class has three components to it: [1] Attributes, [2] Methods, and [3] Constructors.
+1. Attributes - Attributes are the variables that describe your class. Your class’s attributes can be any data type, collection, or even class! Think of attributes to be just like custom fields, except they exist on your class instead of a Salesforce object.  Classes referenced would have to already exist for the class to save!
 
 ## Rule Engine
 Common uses:
