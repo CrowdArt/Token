@@ -42,7 +42,7 @@ public ReturnType MethodName(Input1Type Input1Variable) {
 * `ReturnType` is the data type, collection, or class that’s returned when your method is called. 
 * If you don’t want your method to return anything, use `void`.
 * `MethodName` is whatever you want to name your method
-* 
+* `Input1Type` is the data type, collection, or class that represents your first accepted input, and `Input1Variable` is the variable name you’re assigning it to so you can reference it in your method’s logic. You can add more inputs to your method by separating them with commas. 
 ## Rule Engine
 Common uses:
 * Custom Object Assignment - lets you assign any record in Salesforce at any time with your own logic. Build custom rules sets to support complex processes.
