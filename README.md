@@ -1,9 +1,9 @@
 # Coinbase - Salesforce Org
-Apex
+### Apex
  * [Apex Code Analysis Tool](#apex-code-analysis-tool)
  * [Apex Unit Tests](#apex-unit-tests)
   * [Field History Tracking in Test Methods](#field-history-tracking-in-test-methods)
-Git
+### Git
 * [Git](#git)
 * [Links](#links)
 * [Notes](#notes)
