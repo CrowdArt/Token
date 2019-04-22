@@ -37,6 +37,15 @@ Field history tracking records (such as AccountHistory) can't be created in test
 
 ### LightningSelfRegisterController
 * LightningSelfRegisterControllerTest.testSelfRegisterWithCreatedAccount
+* LightningSelfRegisterControllerTest.testGetNonEmptyExtraFields
+* LightningSelfRegisterControllerTest.testGetNullExtraFields
+* LightningSelfRegisterControllerTest.testSelfRegisterWithProperCredentials
+* LightningSelfRegisterControllerTest.testSiteAsContainerEnabled
+* LightningSelfRegisterControllerTest.testSelfRegisterWithCreatedAccount
+* LightningSelfRegisterControllerTest.testSelfRegistration
+* LightningSelfRegisterControllerTest.testGetExtraFieldsInSelfRegistration
+* LightningSelfRegisterControllerTest.testIsValidPassword
+
 
 
 ## Git
