@@ -4,39 +4,17 @@ global without sharing class onb_LightningSelfRegisterController extends onb_Bas
 
     }
 
-    /**
-     *
-     *
-     * @param password
-     * @param confirmPassword
-     *
-     * @return
-     */
     @TestVisible
     private static boolean isValidPassword(String password, String confirmPassword) {
         return password == confirmPassword;
     }
 
-    /**
-     *
-     *
-     * @param communityUrl
-     *
-     * @return
-     */
     @TestVisible
     private static boolean siteAsContainerEnabled(String communityUrl) {
         Auth.AuthConfiguration authConfig = new Auth.AuthConfiguration(communityUrl,'');
         return authConfig.isCommunityUsingSiteAsContainer();
     }
 
-    /**
-     *
-     *
-     * @param u
-     * @param password
-     * @param confirmPassword
-     */
     @TestVisible
     private static void validatePassword(User u, String password, String confirmPassword) {
         if(!Test.isRunningTest()) {
@@ -45,24 +23,6 @@ global without sharing class onb_LightningSelfRegisterController extends onb_Bas
         return;
     }
 
-
-    /**
-     *
-     *
-     * @param firstname
-     * @param lastname
-     * @param email
-     * @param password
-     * @param businessEntityType
-     * @param confirmPassword
-     * @param accountId
-     * @param regConfirmUrl
-     * @param extraFields
-     * @param startUrl
-     * @param includePassword
-     *
-     * @return
-     */
     @AuraEnabled
     public static String selfRegister(String firstname ,String lastname, String email, String password, String businessEntityType, String legalEntityName, String confirmPassword, String accountId, String regConfirmUrl, String extraFields, String startUrl, Boolean includePassword) {
 
@@ -196,14 +156,6 @@ global without sharing class onb_LightningSelfRegisterController extends onb_Bas
         }
     }
 
-
-    /**
-     *
-     *
-     * @param extraFieldsFieldSet
-     *
-     * @return
-     */
     @AuraEnabled
     public static List<Map<String,Object>> getExtraFields(String extraFieldsFieldSet) {
         List<Schema.FieldSetMember> fieldsetFields = new List<Schema.FieldSetMember>();
@@ -233,13 +185,6 @@ global without sharing class onb_LightningSelfRegisterController extends onb_Bas
     @TestVisible
     private static Schema.FieldSetMember TEST_FIELDSET_MEMBER;
 
-    /**
-     *
-     *
-     * @param expId
-     *
-     * @return
-     */
     @AuraEnabled
     global static String setExperienceId(String expId) {
         // Return null if there is no error, else it will return the error message
@@ -253,14 +198,6 @@ global without sharing class onb_LightningSelfRegisterController extends onb_Bas
         }
     }
 
-    /**
-     *
-     *
-     * @param objObject
-     * @param fld
-     *
-     * @return
-     */
     @AuraEnabled
     public static List<String> getSelectOptions(sObject objObject, string fld) {
         return onb_BaseLightningController.getSelectOptions(objObject, fld);
