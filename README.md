@@ -1,4 +1,5 @@
 # Coinbase - Salesforce Org
+## Table of Contents
 ### Apex
  * [Apex Code Analysis Tool](#apex-code-analysis-tool)
  * [Apex Unit Tests](#apex-unit-tests)
