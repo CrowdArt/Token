@@ -116,4 +116,13 @@ public with sharing class LightningSelfRegisterControllerTest {
   paramsMap.put('startUrl', startUrl);
   return paramsMap;
  }
+ 
+ @IsTest
+    static void testValidatePassword() {
+        onb_LightningSelfRegisterController.validatePassword(new User(),'password?@12334', 'password?@12334');
+ }
+
+ @IsTest
+    static void LightningSelfRegisterController() {    
+ }
 }
