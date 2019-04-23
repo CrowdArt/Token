@@ -1,1 +1,15 @@
-        System.assertEquals(Label.Site.lastname_is_required, onb_LightningSelfRegisterController.selfRegister(paramsMap.get('firstName'), '', paramsMap.get('email'), paramsMap.get('password'), paramsMap.get('businessEntityType'), paramsMap.get('legalEntityName'), paramsMap.get('confirmPasswordCorrect'), null, paramsMap.get('regConfirmUrl'), null, paramsMap.get('startUrl'), true));
+        System.assertEquals(
+                Label.Site.lastname_is_required, 
+                onb_LightningSelfRegisterController.selfRegister
+                (paramsMap.get('firstName'),
+                 '', 
+                 paramsMap.get('email'), 
+                 paramsMap.get('password'), 
+                 paramsMap.get('businessEntityType'), 
+                 paramsMap.get('legalEntityName'), 
+                 paramsMap.get('confirmPasswordCorrect'), 
+                 null, 
+                 paramsMap.get('regConfirmUrl'), 
+                 null, 
+                 paramsMap.get('startUrl'), 
+                 true));
