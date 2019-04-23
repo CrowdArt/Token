@@ -9,10 +9,12 @@ public with sharing class LightningSelfRegisterControllerTest {
  /* Verifies that IsValidPassword method with various password combinations. */
  @IsTest
  static void testIsValidPassword() {
+  Boolean validPass = LightningSelfRegisterController.isValidPassword('password?@12334', 'password?@12334');
   System.assert(LightningSelfRegisterController.isValidPassword('password?@12334', 'password?@12334') == true);
   System.assert(LightningSelfRegisterController.isValidPassword('password?@12334', 'dummyPassword') == false);
   System.assert(LightningSelfRegisterController.isValidPassword('password?@12334', null) == false);
   System.assert(LightningSelfRegisterController.isValidPassword(null, 'fakePwd') == false);
+  LightningSelfRegisterController.validatePassword(new User(),'password?@12334', 'password?@12334');
  }
 
  @IsTest
@@ -79,6 +81,16 @@ public with sharing class LightningSelfRegisterControllerTest {
  static void LightningSelfRegisterControllerInstantiation() {
   LightningSelfRegisterController controller = new LightningSelfRegisterController();
   System.assertNotEquals(controller, null);
+ }
+ 
+ @IsTest
+    static void testGetSelectOptions() {
+        System.assertEquals(onb_LightningSelfRegisterController.getSelectOptions(new Account(), 'Industry'), onb_BaseLightningController.getSelectOptions(new Account(), 'Industry'));
+ }
+
+ @IsTest
+    static void testSetExpId() {
+        System.assertNotEquals(onb_LightningSelfRegisterController.setExperienceId('expId'), null);
  }
 
  /* Helper method to initialize the parameters required for SelfRegistration. */
