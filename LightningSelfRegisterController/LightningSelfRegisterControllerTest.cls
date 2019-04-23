@@ -1,137 +1,107 @@
-global class LightningSelfRegisterController {
-
-    public LightningSelfRegisterController() {
-
-    }
-
-    @TestVisible 
-    private static boolean isValidPassword(String password, String confirmPassword) {
-        return password == confirmPassword;
+@IsTest(SeeAllData = true)
+public with sharing class LightningSelfRegisterControllerTest {
+ @testSetup
+    static void setupData(){
+        onb_Settings__c setting = new onb_Settings__c(Account_Owner_Id__c = UserInfo.getUserId());
+        insert setting;
     }
     
-    @TestVisible 
-    private static boolean siteAsContainerEnabled(String communityUrl) {
-        Auth.AuthConfiguration authConfig = new Auth.AuthConfiguration(communityUrl,'');
-        return authConfig.isCommunityUsingSiteAsContainer();
-    }
-    
-    @TestVisible 
-    private static void validatePassword(User u, String password, String confirmPassword) {
-        if(!Test.isRunningTest()) {
-        Site.validatePassword(u, password, confirmPassword);
-        }
-        return;
-    }
-    
-    @AuraEnabled
-    public static String selfRegister(String firstname ,String lastname, String email, String password, String confirmPassword, String accountId, String regConfirmUrl, String extraFields, String startUrl, Boolean includePassword) {
-        Savepoint sp = null;
-        try {
-            sp = Database.setSavepoint();
-            
-            if (lastname == null || String.isEmpty(lastname)) {
-                return Label.Site.lastname_is_required;
-            }
-            
-            if (email == null || String.isEmpty(email)) {
-                return Label.Site.email_is_required;
-            }
-            
-            User u = new User();
-            u.Username = email;
-            u.put('Email',email);
-            
-            u.FirstName = firstname;
-            u.LastName = lastname;
-            
-            String networkId = Network.getNetworkId();
+ /* Verifies that IsValidPassword method with various password combinations. */
+ @IsTest
+ static void testIsValidPassword() {
+  System.assert(LightningSelfRegisterController.isValidPassword('password?@12334', 'password?@12334') == true);
+  System.assert(LightningSelfRegisterController.isValidPassword('password?@12334', 'dummyPassword') == false);
+  System.assert(LightningSelfRegisterController.isValidPassword('password?@12334', null) == false);
+  System.assert(LightningSelfRegisterController.isValidPassword(null, 'fakePwd') == false);
+ }
 
-            // If using site to host the community the user should not hit s1 after logging in from mobile.
-            if(networkId != null && siteAsContainerEnabled(Network.getLoginUrl(networkId))) {
-                u.put('UserPreferencesHideS1BrowserUI',true);
-            }
-            
-            String nickname = ((firstname != null && firstname.length() > 0) ? firstname.substring(0,1) : '' ) + lastname.substring(0,1);
-            nickname += String.valueOf(Crypto.getRandomInteger()).substring(1,7);
-            u.put('CommunityNickname', nickname);
-                     
-            if (extraFields != null) {
-                List<Object> extraFieldsList = (List<Object>) JSON.deserializeUntyped(extraFields);        
-                for (Object thisFieldObject : extraFieldsList) {
-                    Map<String,Object> thisField = (Map<String,Object>) thisFieldObject;
-                    Schema.SObjectField sof = Schema.SObjectType.User.fields.getMap().get((String) thisField.get('fieldPath'));
-                    u.put(sof, thisField.get('value'));
-                }
-            }
-                        
-            if (includePassword) {    
-                if (!isValidPassword(password, confirmPassword)) {
-                    return Label.site.passwords_dont_match;
-                }
-             validatePassword(u, password, confirmPassword);
-            }
-            else {
-                password = null;
-            }
-            
-            // lastName is a required field on user, but if it isn't specified, we'll default it to the username
-            String userId = Site.createPortalUser(u, accountId, password);
-            // create a fake userId for test.
-            if (Test.isRunningTest()) {
-                userId = 'fakeUserId';           
-            }
-            if (userId != null) { 
-                if (password != null && password.length() > 1) {
-                    ApexPages.PageReference lgn = Site.login(email, password, startUrl);
-                    if(!Test.isRunningTest()) {
-                     aura.redirect(lgn);
-                    }
-                }
-                else {
-                    ApexPages.PageReference confirmRef = new PageReference(regConfirmUrl);
-                    if(!Test.isRunningTest()) {
-                    aura.redirect(confirmRef);
-                   }
+ @IsTest
+ static void testSiteAsContainerEnabled() {
+  System.assertNotEquals(null, LightningSelfRegisterController.siteAsContainerEnabled('https://portaleu1-developer-edition.eu11.force.com'));
+ }
 
-                }
-            }
-            return null;
-        }
-        catch (Exception ex) {
-            Database.rollback(sp);
-            return ex.getMessage();            
-        }
-    }
-    
-    @AuraEnabled
-    public static List<Map<String,Object>> getExtraFields(String extraFieldsFieldSet) { 
-        List<Map<String,Object>> extraFields = new List<Map<String,Object>>();
-        Schema.FieldSet fieldSet = Schema.SObjectType.User.fieldSets.getMap().get(extraFieldsFieldSet);
-        if(!Test.isRunningTest()) {
-        if (fieldSet != null) {
-            for (Schema.FieldSetMember f : fieldSet.getFields()) {
-                Map<String, Object> fieldDetail = new Map<String, Object>();
-                fieldDetail.put('dbRequired', f.getDBRequired());
-                fieldDetail.put('fieldPath', f.getFieldPath());
-                fieldDetail.put('label', f.getLabel());
-                fieldDetail.put('required', f.getRequired());
-                fieldDetail.put('type', f.getType());
-                fieldDetail.put('value', '');   // client will populate
-                extraFields.add(fieldDetail);
-            }}}
-        return extraFields;
-    }
-    
-    @AuraEnabled
-    global static String setExperienceId(String expId) {
-        // Return null if there is no error, else it will return the error message 
-        try {
-            if (expId != null) {
-                Site.setExperienceId(expId);   
-            }
-            return null; 
-        } catch (Exception ex) {
-            return ex.getMessage();            
-        }        
-    }  
+ /* Verifies the selfRegistration method flow with various invalid inputs */
+ @IsTest
+ static void testSelfRegistration() {
+  Map < String, String > paramsMap = initializeParams();
+  System.assertNotEquals(null, paramsMap);
+  System.assertEquals(Label.Site.lastname_is_required, LightningSelfRegisterController.selfRegister(paramsMap.get('firstName'), '', paramsMap.get('email'), paramsMap.get('password'), paramsMap.get('confirmPasswordCorrect'), null, paramsMap.get('regConfirmUrl'), null, paramsMap.get('startUrl'), true));
+  System.assertEquals(Label.Site.email_is_required, LightningSelfRegisterController.selfRegister(paramsMap.get('firstName'), paramsMap.get('lastName'), '', paramsMap.get('password'), paramsMap.get('confirmPasswordCorrect'), null, paramsMap.get('regConfirmUrl'), null, paramsMap.get('startUrl'), true));
+  System.assertEquals(Label.Site.email_is_required, LightningSelfRegisterController.selfRegister(null, paramsMap.get('lastName'), '', null, paramsMap.get('confirmPasswordCorrect'), null, paramsMap.get('regConfirmUrl'), null, paramsMap.get('startUrl'), true));
+  System.assertEquals(Label.site.passwords_dont_match, LightningSelfRegisterController.selfRegister(paramsMap.get('firstName'), paramsMap.get('lastName'), paramsMap.get('email'), paramsMap.get('password'), paramsMap.get('confirmPasswordWrong'), null, paramsMap.get('regConfirmUrl'), null, paramsMap.get('startUrl'), true));
+  System.assertNotEquals(null, LightningSelfRegisterController.selfRegister(paramsMap.get('firstName'), paramsMap.get('lastName'), '', paramsMap.get('password'), paramsMap.get('confirmPasswordWrong'), null, paramsMap.get('regConfirmUrl'), null, paramsMap.get('startUrl'), false));
+ }
+
+
+ /* Verifies the selfRegistration flow for valid inputs */
+ @IsTest
+ static void testSelfRegisterWithProperCredentials() {
+  Map < String, String > paramsMap = initializeParams();
+  System.assertEquals(null, LightningSelfRegisterController.selfRegister(paramsMap.get('firstName'), paramsMap.get('lastName'), paramsMap.get('email'), paramsMap.get('password'), paramsMap.get('confirmPasswordCorrect'), null, paramsMap.get('regConfirmUrl'), null, paramsMap.get('startUrl'), true));
+ }
+
+ /* Verifies SelfRegistration flow with an accounId that is created within the test */
+ @IsTest
+ static void testSelfRegisterWithCreatedAccount() {
+  Account acc = new Account(name = 'test acc');
+  insert acc;
+  List < Account > accounts = [SELECT Id FROM Account LIMIT 1];
+  System.assert(!accounts.isEmpty(), 'There must be at least one account in this environment!');
+  String accountId = accounts[0].Id;
+  Map < String, String > paramsMap = initializeParams();
+  System.assertEquals(null, LightningSelfRegisterController.selfRegister(paramsMap.get('firstName'), paramsMap.get('lastName'), paramsMap.get('email'), paramsMap.get('password'), paramsMap.get('confirmPasswordCorrect'), accountId, paramsMap.get('regConfirmUrl'), null, paramsMap.get('startUrl'), false));
+ }
+
+ @IsTest
+ static void testGetNullExtraFields() {
+  System.assertEquals(new List < Map < String, Object >> (), LightningSelfRegisterController.getExtraFields(null));
+ }
+
+ @IsTest
+ static void testGetNonEmptyExtraFields() {
+  System.assertEquals(new List < Map < String, Object >> (), LightningSelfRegisterController.getExtraFields('field1'));
+ }
+
+ /* Verifies validation of extraFields within the Self Registration flow */
+ @IsTest
+ static void testGetExtraFieldsInSelfRegistration() {
+  List < Map < String, Object >> fieldlist = new List < Map < String, Object >> ();
+  Map < String, String > paramsMap = initializeParams();
+  Map < String, Object > fieldMap = new Map < String, Object > ();
+  fieldMap.put('description', 'new field');
+  fieldMap.put('fieldPath', 'dummyPath');
+  fieldlist.add(fieldMap);
+  String extraFields = JSON.serialize(fieldlist);
+  System.assertNotEquals(null, LightningSelfRegisterController.selfRegister(paramsMap.get('firstName'), paramsMap.get('lastName'), paramsMap.get('email'), paramsMap.get('password'), paramsMap.get('confirmPasswordCorrect'), null, paramsMap.get('regConfirmUrl'), extraFields, paramsMap.get('startUrl'), true));
+ }
+
+ @IsTest
+ static void LightningSelfRegisterControllerInstantiation() {
+  LightningSelfRegisterController controller = new LightningSelfRegisterController();
+  System.assertNotEquals(controller, null);
+ }
+
+ /* Helper method to initialize the parameters required for SelfRegistration. */
+ private static Map < String, String > initializeParams() {
+  Map < String, String > paramsMap = new Map < String, String > ();
+  String firstName = 'test';
+  String lastName = 'User';
+  String email = 'testUser@salesforce.com';
+  String password = 'testuser123';
+  String confirmPasswordCorrect = 'testuser123';
+  String confirmPasswordWrong = 'wrongpassword';
+  String accountId = 'testuser123';
+  String regConfirmUrl = 'http://registration-confirm.com';
+  String startUrl = 'http://my.company.salesforce.com';
+  paramsMap.put('firstName', firstName);
+  paramsMap.put('lastName', lastName);
+  paramsMap.put('email', email);
+  paramsMap.put('password', password);
+  paramsMap.put('confirmPasswordCorrect', confirmPasswordCorrect);
+  paramsMap.put('confirmPasswordWrong', confirmPasswordWrong);
+  paramsMap.put('accountId', accountId);
+  paramsMap.put('regConfirmUrl', regConfirmUrl);
+  paramsMap.put('startUrl', startUrl);
+  return paramsMap;
+ }
 }
