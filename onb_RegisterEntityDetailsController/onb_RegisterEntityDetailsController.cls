@@ -1,137 +1,175 @@
-global class LightningSelfRegisterController {
+/**
+ * Created by joshuakrinsky on 2019-01-29.
+ */
 
-    public LightningSelfRegisterController() {
+global with sharing class onb_RegisterEntityDetailsController extends onb_BaseLightningController {
+
+    public onb_RegisterEntityDetailsController(){
 
     }
 
-    @TestVisible 
-    private static boolean isValidPassword(String password, String confirmPassword) {
-        return password == confirmPassword;
-    }
-    
-    @TestVisible 
-    private static boolean siteAsContainerEnabled(String communityUrl) {
-        Auth.AuthConfiguration authConfig = new Auth.AuthConfiguration(communityUrl,'');
-        return authConfig.isCommunityUsingSiteAsContainer();
-    }
-    
-    @TestVisible 
-    private static void validatePassword(User u, String password, String confirmPassword) {
-        if(!Test.isRunningTest()) {
-        Site.validatePassword(u, password, confirmPassword);
-        }
-        return;
-    }
-    
     @AuraEnabled
-    public static String selfRegister(String firstname ,String lastname, String email, String password, String confirmPassword, String accountId, String regConfirmUrl, String extraFields, String startUrl, Boolean includePassword) {
-        Savepoint sp = null;
-        try {
-            sp = Database.setSavepoint();
-            
-            if (lastname == null || String.isEmpty(lastname)) {
-                return Label.Site.lastname_is_required;
-            }
-            
-            if (email == null || String.isEmpty(email)) {
-                return Label.Site.email_is_required;
-            }
-            
-            User u = new User();
-            u.Username = email;
-            u.put('Email',email);
-            
-            u.FirstName = firstname;
-            u.LastName = lastname;
-            
-            String networkId = Network.getNetworkId();
+    public static Id getCurrentUserId() {
+        return UserInfo.getUserId();
+    }
 
-            // If using site to host the community the user should not hit s1 after logging in from mobile.
-            if(networkId != null && siteAsContainerEnabled(Network.getLoginUrl(networkId))) {
-                u.put('UserPreferencesHideS1BrowserUI',true);
+    @AuraEnabled
+    public static List<String> getSelectOptions(sObject objObject, String fld) {
+        return onb_BaseLightningController.getSelectOptions(objObject, fld);
+    }
+
+    @AuraEnabled
+    public static List<Product2> getProducts(){
+        List<Product2> products = [Select Id, Name from Product2];
+        return products;
+    }
+
+    @AuraEnabled
+    public static List<String> getCountriesWithStates(){
+        List<Schema.PicklistEntry> activeEntries = new List<Schema.PicklistEntry>();
+        for (Schema.PicklistEntry pe : onb_Onboarding_Application__c.State_Province__c.getDescribe().getPicklistValues()) {
+            if (pe.isActive()) {
+                activeEntries.add(pe);
             }
-            
-            String nickname = ((firstname != null && firstname.length() > 0) ? firstname.substring(0,1) : '' ) + lastname.substring(0,1);
-            nickname += String.valueOf(Crypto.getRandomInteger()).substring(1,7);
-            u.put('CommunityNickname', nickname);
-                     
-            if (extraFields != null) {
-                List<Object> extraFieldsList = (List<Object>) JSON.deserializeUntyped(extraFields);        
-                for (Object thisFieldObject : extraFieldsList) {
-                    Map<String,Object> thisField = (Map<String,Object>) thisFieldObject;
-                    Schema.SObjectField sof = Schema.SObjectType.User.fields.getMap().get((String) thisField.get('fieldPath'));
-                    u.put(sof, thisField.get('value'));
+        }
+        List<Object> untyped = (List<Object>)JSON.deserializeUntyped(JSON.serialize(activeEntries));
+        List<Schema.PicklistEntry> controlEntries = onb_Onboarding_Application__c.Business_Address_Country__c.getDescribe().getPicklistValues();
+        Set<String> result = new Set<String>();
+        for (Object untypedEntry : untyped) {
+            Map<String,Object> entry = (Map<String,Object>)untypedEntry;
+            BitsetChecker checker = new BitsetChecker((String)entry.get('validFor'));
+            Integer index = -1;
+            for (Schema.PicklistEntry cpe : controlEntries) {
+                index++;
+                if (!cpe.isActive()) continue;
+                if (checker.testBit(index)) {
+                    result.add(cpe.getValue());
                 }
             }
-                        
-            if (includePassword) {    
-                if (!isValidPassword(password, confirmPassword)) {
-                    return Label.site.passwords_dont_match;
-                }
-             validatePassword(u, password, confirmPassword);
-            }
-            else {
-                password = null;
-            }
-            
-            // lastName is a required field on user, but if it isn't specified, we'll default it to the username
-            String userId = Site.createPortalUser(u, accountId, password);
-            // create a fake userId for test.
-            if (Test.isRunningTest()) {
-                userId = 'fakeUserId';           
-            }
-            if (userId != null) { 
-                if (password != null && password.length() > 1) {
-                    ApexPages.PageReference lgn = Site.login(email, password, startUrl);
-                    if(!Test.isRunningTest()) {
-                     aura.redirect(lgn);
+        }
+        return new List<String>(result);
+    }
+
+    public class BitsetChecker {
+        public String validFor {get;private set;}
+        public String vfDecoded {get;private set;}
+        public String[] hexBytes {get;private set;}
+        public Integer[] bytes {get;private set;}
+
+        public BitsetChecker(String validFor) {
+            this.validFor = validFor;
+            this.vfDecoded = null;
+            hexBytes = new String[] {};
+            bytes = new Integer[] {};
+            if (String.isNotBlank(validFor)) {
+                this.vfDecoded = String.isNotBlank(validFor) ?
+                    EncodingUtil.convertToHex(EncodingUtil.base64Decode(validFor)).toLowerCase() : '';
+                if (String.isNotBlank(vfDecoded) && Math.mod(vfDecoded.length(), 2) == 0) {
+                    for (Integer i = 0; i < vfDecoded.length(); i += 2) {
+                        String hexByte = vfDecoded.substring(i, i + 2);
+                        hexBytes.add(hexByte);
+                        bytes.add(hexToDecimal(hexByte).intValue());
                     }
                 }
-                else {
-                    ApexPages.PageReference confirmRef = new PageReference(regConfirmUrl);
-                    if(!Test.isRunningTest()) {
-                    aura.redirect(confirmRef);
-                   }
+            }
+        }
 
+        public Boolean testBit(Integer n) {
+            Boolean result = false;
+            if (n != null && n < size() && hexBytes != null) {
+                Integer bytesPos = n >> 3;
+                Integer targetByte = bytesPos < bytes.size() ? bytes[bytesPos] : null;
+                if (targetByte != null) {
+                    Integer mask = 128 >> Math.mod(n, 8);
+                    Integer maskedByte = targetByte & mask;
+                    result = maskedByte != 0;
                 }
             }
-            return null;
+            return result;
         }
-        catch (Exception ex) {
-            Database.rollback(sp);
-            return ex.getMessage();            
+
+        public Integer size() {
+            return bytes.size() * 8;
         }
-    }
-    
-    @AuraEnabled
-    public static List<Map<String,Object>> getExtraFields(String extraFieldsFieldSet) { 
-        List<Map<String,Object>> extraFields = new List<Map<String,Object>>();
-        Schema.FieldSet fieldSet = Schema.SObjectType.User.fieldSets.getMap().get(extraFieldsFieldSet);
-        if(!Test.isRunningTest()) {
-        if (fieldSet != null) {
-            for (Schema.FieldSetMember f : fieldSet.getFields()) {
-                Map<String, Object> fieldDetail = new Map<String, Object>();
-                fieldDetail.put('dbRequired', f.getDBRequired());
-                fieldDetail.put('fieldPath', f.getFieldPath());
-                fieldDetail.put('label', f.getLabel());
-                fieldDetail.put('required', f.getRequired());
-                fieldDetail.put('type', f.getType());
-                fieldDetail.put('value', '');   // client will populate
-                extraFields.add(fieldDetail);
-            }}}
-        return extraFields;
-    }
-    
-    @AuraEnabled
-    global static String setExperienceId(String expId) {
-        // Return null if there is no error, else it will return the error message 
-        try {
-            if (expId != null) {
-                Site.setExperienceId(expId);   
+
+        public Decimal hexToDecimal(String sourceHex) {
+            String hex = '0123456789abcdef';
+            String[] hexValue = sourceHex.split('');
+            Decimal result = 0;
+            for(Integer index = 0; index < hexValue.size(); index++) {
+                result = (result * 16) + hex.indexOf(hexValue[index]);
             }
-            return null; 
+            return result;
+        }
+    }
+
+    @TestVisible
+    private static Id TEST_ACCOUNT_ID;
+
+    @AuraEnabled
+    public static String completeRegistration(Id appId, String street1, String street2, String  city, String country, String state, String postalCode, String[] products, String businessType, String coinbaseEntity, String legal, String legalEntityType, String otherBusinessType) {
+        Savepoint sp = null;
+
+        try{
+
+            sp = Database.setSavepoint();
+
+            Id userId = UserInfo.getUserId();
+            User user = [SELECT Id, Contact.AccountId FROM User WHERE Id = :UserInfo.getUserId()];
+            Id onboarding_account_id = Test.isRunningTest() ? TEST_ACCOUNT_ID : user.Contact.AccountId;
+            onb_Onboarding_Application__c app = [
+                SELECT Id, Business_Address_Line_1__c, Business_Address_Line_2__c, Business_Address_Country__c,
+                    State_Province__c, Business_Address_Postal_Code__c
+                FROM onb_Onboarding_Application__c
+                WHERE Onboarding_Account__c = :onboarding_account_id
+                LIMIT 1
+            ];
+
+            app.Business_Address_Line_1__c = street1;
+            app.Business_Address_Line_2__c = street2;
+            app.Business_Address_Country__c = country;
+            app.State_Province__c = state;
+            app.Business_Address_Postal_Code__c = postalCode;
+            app.Industry_of_applying_entity__c = legal;
+            app.Business_Type__c = businessType;
+            app.Coinbase_Entity__c = coinbaseEntity;
+            app.Legal_Entity_Type__c = legalEntityType;
+            app.Other_Business_Type__c = otherBusinessType;
+
+            update app;
+
+            List<onb_Onboarding_Application_Product__c> obProducts = new List<onb_Onboarding_Application_Product__c>();
+
+            for (String product : products) {
+                product = EncodingUtil.urlDecode(product, 'ASCII');
+                List<String> pTokens = product.split('::');
+
+                obProducts.add(new onb_Onboarding_Application_Product__c(
+                    Onboarding_Application__c = app.Id,
+                    Product__c = Id.valueOf(pTokens[0]),
+                    Name = pTokens[1]
+                ));
+
+            }
+
+            insert obProducts;
+
+            Site.forgotPassword(UserInfo.getUserName(), 'Onboarding_Community_Welcome_Email');
+
+            PageReference regCompleteRef = new PageReference('./login/CheckPasswordResetEmail');
+
+            if (!Test.isRunningTest()) {
+                aura.redirect(regCompleteRef);
+            }
+
         } catch (Exception ex) {
-            return ex.getMessage();            
-        }        
-    }  
+
+            Database.rollback(sp);
+            System.debug(ex);
+            return ex.getMessage();
+        }
+
+
+        return null;
+    }
 }
