@@ -1,6 +1,5 @@
 @isTest
 private class onb_RegisterEntityDetailsControllerTest {
-/**	
     @testSetup
     static void setupData(){
         onb_Settings__c setting = new onb_Settings__c(Account_Owner_Id__c = UserInfo.getUserId());
@@ -95,5 +94,4 @@ private class onb_RegisterEntityDetailsControllerTest {
         paramsMap.put('legalEntityType', legalEntityType);
         paramsMap.put('otherBusinessType', otherBusinessType);
         return paramsMap;
-    }*/
 }
