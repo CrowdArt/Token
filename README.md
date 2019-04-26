@@ -1,4 +1,4 @@
-# Coinbase - Salesforce Org
+# Org
 ## Table of Contents
 ### Apex
  * [Apex Code Analysis Tool](#apex-code-analysis-tool)
@@ -45,8 +45,6 @@ Field history tracking records (such as AccountHistory) can't be created in test
 * LightningSelfRegisterControllerTest.testSelfRegistration
 * LightningSelfRegisterControllerTest.testGetExtraFieldsInSelfRegistration
 * LightningSelfRegisterControllerTest.testIsValidPassword
-
-
 
 ## Git
 Pull requests: A pull request is a package of commits you’re requesting to be merged into the default branch. A pull request provides a place to discuss the changes you’re proposing and invite other team members to comment and complete code reviews. Pull requests also help you see the result of automated tests and many other cool integrations.
