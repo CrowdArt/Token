@@ -113,9 +113,11 @@ https://onb-coinbase.cs97.force.com/onboarding/s/
 
 ## Links
 * [Class Pattern in Java](https://docs.oracle.com/javase/1.5.0/docs/api/index.html?java/util/regex/Pattern.html)
+* [Stackoverflow - Coupon code validation in js](https://stackoverflow.com/questions/38865345/coupon-code-validation-funcanality-using-javascript-or-jquery)
 * [Pattern and Matcher Example](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_pattern_and_matcher_example.htm)
 * [Salesforce Developer Centers](https://developer.salesforce.com/developer-centers/)
 * [Professional & Minimal WordPress Themes by Alien](https://alienwp.com/)
+* [Unix Cheatsheet](http://www.mathcs.emory.edu/~valerie/courses/fall10/155/resources/unix_cheatsheet.html)
 * https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_dynamic_describe_objects_understanding.htm
 * http://sfdcmonkey.com/2018/02/25/fetch-multi-picklist-values-lightningduallistbox-component/
 * https://www.lightningdesignsystem.com/components/path/
