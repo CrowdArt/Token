@@ -7,6 +7,7 @@
    * [Run Unit Tests](#run-unit-tests)
 * [Courses](#courses)
 * [Git](#git)
+* [JavaScript](#javascript)
 * [Links](#links)
 * [Notes](#notes)
 * [OOP](#oop)
@@ -49,6 +50,8 @@ Field history tracking records (such as AccountHistory) can't be created in test
 Pull requests: A pull request is a package of commits you’re requesting to be merged into the default branch. A pull request provides a place to discuss the changes you’re proposing and invite other team members to comment and complete code reviews. Pull requests also help you see the result of automated tests and many other cool integrations.
 *  network commands in Git: `git clone`, `git fetch`, `git pull`, and `git push`.
 
+## JavaScript
+* [document.getElementById() method](https://www.javatpoint.com/document-getElementById()-method)
 ## Notes
 * Application owner object - coinbase inc questionnaire (applying in us)
 * Rules engine - sync up with Josh
