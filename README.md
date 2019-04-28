@@ -111,7 +111,10 @@ https://onb-coinbase.cs97.force.com/onboarding/s/
 * registerEntityDEtails
 
 ## Salesforce Community
+* [Lightning Communities Developer Guide Version 44.0 Winter ’19](chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/https://resources.docs.salesforce.com/216/latest/en-us/sfdc/pdf/communities_dev.pdf)
 * [Set Up Self-Registration for Your Community](https://help.salesforce.com/articleView?id=networks_customize_selfreg_page.htm&type=5)
+* [Set Up and Manage Salesforce Communities Winter ’19](chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/https://resources.docs.salesforce.com/216/latest/en-us/sfdc/pdf/communities.pdf)
+
 
 
 ## Version Control System - VCS
@@ -127,8 +130,10 @@ https://onb-coinbase.cs97.force.com/onboarding/s/
 
 ## Links
 * [Class Pattern in Java](https://docs.oracle.com/javase/1.5.0/docs/api/index.html?java/util/regex/Pattern.html)
+* [Introduction to the “static” keyword](http://www.sfdc99.com/2015/01/22/introduction-to-the-static-keyword/)
 * [Stackoverflow - Coupon code validation in js](https://stackoverflow.com/questions/38865345/coupon-code-validation-funcanality-using-javascript-or-jquery)
 * [Pattern and Matcher Example](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_pattern_and_matcher_example.htm)
+* [SSH - GitHib Help](https://help.github.com/en/articles/about-ssh)
 * [Salesforce Developer Centers](https://developer.salesforce.com/developer-centers/)
 * [Professional & Minimal WordPress Themes by Alien](https://alienwp.com/)
 * [Unix Cheatsheet](http://www.mathcs.emory.edu/~valerie/courses/fall10/155/resources/unix_cheatsheet.html)
