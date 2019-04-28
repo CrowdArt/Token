@@ -6,6 +6,7 @@
    * [Field History Tracking in Test Methods](#field-history-tracking-in-test-methods)
    * [LightningSelfRegisterController](#lightningselfregistercontroller)
    * [Run Unit Tests](#run-unit-tests)
+ * [Courses](#courses)
  * [OOP](#oop)
 ### Git
 * [Git](#git)
@@ -123,3 +124,5 @@ https://onb-coinbase.cs97.force.com/onboarding/s/
 * https://developer.salesforce.com/forums/?id=9060G000000I2hzQAC
 * http://sfdcmonkey.com/2016/12/05/how-to-fetch-picklist-value-from-sobject-and-set-in-uiinputselect/
 * https://developer.salesforce.com/docs/atlas.en-us.uiapi.meta/uiapi/ui_api_resources_picklist_values.html
+## Courses
+* [JavaScript in Salesforce - Dan Appleman](https://app.pluralsight.com/player?name=javascript-in-salesforce-getting-started-m1&mode=live&clip=5&course=javascript-in-salesforce-getting-started&author=dan-appleman)
