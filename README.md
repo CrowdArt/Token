@@ -11,6 +11,7 @@
 * [Links](#links)
 * [Notes](#notes)
 * [OOP](#oop)
+* [Salesforce Community](#salesforce-community)
 #
 ## Apex Code Analysis Tool
 * [Gearset](https://gearset.com/)
@@ -18,6 +19,9 @@
 * [Salesforce Schema Lister](https://schemalister.herokuapp.com/schema/65939236-c64f-4c7f-8152-5b15120a1fea/)
 * [Scan Results](https://sfcodeclean.herokuapp.com/job/757c9186-09dd-40f6-b679-174dc6a355d5/)
 * [Spring Cleaning Apex Code with the Tooling API](https://andyinthecloud.com/2013/02/02/spring-cleaning-apex-code-with-the-tooling-api/)
+
+## Apex System Class
+* [System Class](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_system.htm)
 
 ## Apex Unit Tests
 Unit tests are class methods that verify whether a particular piece of code is working properly. Unit test methods:
@@ -83,7 +87,8 @@ Common uses:
 * Rule Criteria - Child object
 * Rule Result - Child object.
 * To update one record, trigger will call this method and loop through all the rules, rule criteria and update rule result value on the field.
-### Onboarding Application
+
+## Onboarding Application
 https://onb-coinbase.cs97.force.com/onboarding/s/
 #### Pages:
 * Check Password
@@ -103,6 +108,11 @@ https://onb-coinbase.cs97.force.com/onboarding/s/
 * lightning self reg class and the register entity details class
 * onb_ApplicationFormController
 * registerEntityDEtails
+
+## Salesforce Community
+* [Set Up Self-Registration for Your Community](https://help.salesforce.com/articleView?id=networks_customize_selfreg_page.htm&type=5)
+
+
 ## Version Control System - VCS
 ### Source of Truth
 * create a package (logical set of code)
