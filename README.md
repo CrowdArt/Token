@@ -1,17 +1,16 @@
 # Org
 ## Table of Contents
 ### Apex
- * [Apex Code Analysis Tool](#apex-code-analysis-tool)
- * [Apex Unit Tests](#apex-unit-tests)
+* [Apex Code Analysis Tool](#apex-code-analysis-tool)
+* [Apex Unit Tests](#apex-unit-tests)
    * [Field History Tracking in Test Methods](#field-history-tracking-in-test-methods)
    * [LightningSelfRegisterController](#lightningselfregistercontroller)
    * [Run Unit Tests](#run-unit-tests)
- * [Courses](#courses)
- * [OOP](#oop)
-### Git
+* [Courses](#courses)
 * [Git](#git)
 * [Links](#links)
 * [Notes](#notes)
+* [OOP](#oop)
 
 ## Apex Code Analysis Tool
 * [Gearset](https://gearset.com/)
