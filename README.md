@@ -112,6 +112,7 @@ https://onb-coinbase.cs97.force.com/onboarding/s/
 * [Understanding the Github Flow](https://guides.github.com/introduction/flow/)
 
 ## Links
+* [Class Pattern in Java](https://docs.oracle.com/javase/1.5.0/docs/api/index.html?java/util/regex/Pattern.html)
 * [Pattern and Matcher Example](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_pattern_and_matcher_example.htm)
 * [Salesforce Developer Centers](https://developer.salesforce.com/developer-centers/)
 * [Professional & Minimal WordPress Themes by Alien](https://alienwp.com/)
