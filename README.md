@@ -126,3 +126,4 @@ https://onb-coinbase.cs97.force.com/onboarding/s/
 * https://developer.salesforce.com/docs/atlas.en-us.uiapi.meta/uiapi/ui_api_resources_picklist_values.html
 ## Courses
 * [JavaScript in Salesforce - Dan Appleman](https://app.pluralsight.com/player?name=javascript-in-salesforce-getting-started-m1&mode=live&clip=5&course=javascript-in-salesforce-getting-started&author=dan-appleman)
+* [Force.com and Apex for Developers by Dan Appleman - Pluralsight]()
