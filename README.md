@@ -1,6 +1,7 @@
 # Salesforce Org
 ### Table of Contents
 * [Apex Code Analysis Tool](#apex-code-analysis-tool)
+* [Apex String Class](#apex-string-class)
 * [Apex System Class](#apex-system-class)
 * [Apex Unit Tests](#apex-unit-tests)
    * [Field History Tracking in Test Methods](#field-history-tracking-in-test-methods)
@@ -20,7 +21,8 @@
 * [Salesforce Schema Lister](https://schemalister.herokuapp.com/schema/65939236-c64f-4c7f-8152-5b15120a1fea/)
 * [Scan Results](https://sfcodeclean.herokuapp.com/job/757c9186-09dd-40f6-b679-174dc6a355d5/)
 * [Spring Cleaning Apex Code with the Tooling API](https://andyinthecloud.com/2013/02/02/spring-cleaning-apex-code-with-the-tooling-api/)
-
+## Apex String Class
+* [String Class](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_string.htm)
 ## Apex System Class
 * [System Class](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_system.htm)
 
