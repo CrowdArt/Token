@@ -93,7 +93,13 @@ Common uses:
 * To update one record, trigger will call this method and loop through all the rules, rule criteria and update rule result value on the field.
 
 ## Onboarding Application
+### Login
 https://onb-coinbase.cs97.force.com/onboarding/s/
+### Self-Register
+https://onb-coinbase.cs97.force.com/onboarding/s/login/SelfRegister
+### Register Entity Details
+https://onb-coinbase.cs97.force.com/onboarding/s/RegisterEntityDetails?b=null
+
 #### Pages:
 * Check Password
 * Create Record
