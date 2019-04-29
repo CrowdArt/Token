@@ -1,5 +1,5 @@
 @IsTest
-public with sharing class onb_LightningSelfRegisterControllerTest {
+public with sharing class LightningSelfRegisterControllerTest {
 
     @testSetup
     static void setupData(){
