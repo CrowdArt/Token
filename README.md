@@ -7,7 +7,7 @@
    * [Field History Tracking in Test Methods](#field-history-tracking-in-test-methods)
    * [LightningSelfRegisterController](#lightningselfregistercontroller)
    * [Run Unit Tests](#run-unit-tests)
-* [Aura -]
+* Aura
    * [Validating Fields](#validating-fields)
 * [Courses](#courses)
 * [Git](#git)
