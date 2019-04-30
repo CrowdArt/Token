@@ -7,6 +7,8 @@
    * [Field History Tracking in Test Methods](#field-history-tracking-in-test-methods)
    * [LightningSelfRegisterController](#lightningselfregistercontroller)
    * [Run Unit Tests](#run-unit-tests)
+* [Aura -]
+   * [Validating Fields](#validating-fields)
 * [Courses](#courses)
 * [Git](#git)
 * [JavaScript](#javascript)
@@ -42,7 +44,9 @@ Field history tracking records (such as AccountHistory) can't be created in test
 * Some or all methods in a set of classes
 * A predefined suite of classes, known as a test suite
 * All unit tests in your org
-
+# Aura
+## Validating Fields
+* [Validating Fields](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/js_validate_fields.htm)
 ### LightningSelfRegisterController
 * LightningSelfRegisterControllerTest.testSelfRegisterWithCreatedAccount
 * LightningSelfRegisterControllerTest.testGetNonEmptyExtraFields
