@@ -1,5 +1,6 @@
 # Salesforce Org
 ### Table of Contents
+* [Apex Best Practices](#apex-best-practices)
 * [Apex Code Analysis Tool](#apex-code-analysis-tool)
 * [Apex String Class](#apex-string-class)
 * [Apex System Class](#apex-system-class)
@@ -18,6 +19,10 @@
 * [OOP](#oop)
 * [Salesforce Community](#salesforce-community)
 #
+
+## Apex Best Practices
+* Only use primitives in sets.
+* 
 ## Apex Code Analysis Tool
 * [Gearset](https://gearset.com/)
 * [Toolkit for Salesforce](https://cloudtoolkit.co/)
