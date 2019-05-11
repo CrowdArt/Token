@@ -22,7 +22,9 @@
 
 ## Apex Best Practices
 * Only use primitives in sets.
-* 
+* Best places to use sets:
+  * Prevent and detect duplicate IDs
+  * 
 ## Apex Code Analysis Tool
 * [Gearset](https://gearset.com/)
 * [Toolkit for Salesforce](https://cloudtoolkit.co/)
