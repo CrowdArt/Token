@@ -14,3 +14,10 @@ Map<ID, Contact> contactMap = new Map<ID, Contact>(contacts);
 ```apex
 Map<ID, Contact> contactMape = new Map<ID, Contact>([SELECT ID, Name FROM Contact limit  50]);
 ```
+## Use a Map to obtain a set of IDs
+#### Initialize a set of contacts, 
+#### Insert them into the database, where other triggers and processes may modify them.  The insert operation populates the ID field.
+```apex
+List<Contact> contacts = new List<Contact>();
+insert contacts;
+```
