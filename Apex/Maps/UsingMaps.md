@@ -20,3 +20,11 @@ Map<ID, Contact> contactMape = new Map<ID, Contact>([SELECT ID, Name FROM Contac
 List<Contact> contacts = new List<Contact>();
 insert contacts;
 ```
+#### Build a Map to the Contacts the key will be the contact ID
+```apex
+Map<ID, Contact> contactMap = new Map<ID, Contact>(contacts);
+```
+* Retrieve the current values of those contacts filtering on the set (the IDs) of the previously inserted contacts
+```apex 
+List<Contact> currentContacts = [SELECT ID, Name FROM Contact WHERE ID in :contactMap.keyset()];
+```
