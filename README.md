@@ -22,9 +22,11 @@
 
 ## Apex Best Practices
 * Only use primitives in sets.
-* Best places to use sets:
+* Best places to use `sets`:
   * Prevent and detect duplicate IDs
-  * 
+  * Use in queries (with `in` and `not in` term) to filter resutls
+  * Convert a set to a list by passing it as a parameter to a list constructor
+  * Add all items in a list to a set using the set `addAll` method
 ## Apex Code Analysis Tool
 * [Gearset](https://gearset.com/)
 * [Toolkit for Salesforce](https://cloudtoolkit.co/)
