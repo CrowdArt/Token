@@ -9,14 +9,24 @@ trigger CheckSecretInformation on Case (after insert, before update) {
     for (Case myCase : Trigger.new) {
         for (String keyword : secretKeywords) {
             // check if the case description uses a specific keyword
-            if (myCase.Description != null && myCase.Description.contains(keyword)) {
+            if (myCase.Description != null && myCase.Description.containsIgnoreCase(keyword)) {
                 caseWithSecretInfo.add(myCase);
                 System.debug('Case ' + myCase.Id + ' include secret keyword ' + keyowrd);
                 break;
             }    
         }
-        
     }
+    
+    // Step 3: If our case contains a secret keyword, create a child case
+    for (Case caseWithSecretInfo : casesWithSecretInfo) {
+        Case childCase = new Case();
+        childCase.subject = 'Warning: Parent case may contain secret info.';
+        childCase.ParentId = caseWithSecretInfo.Id;
+        childCase.isEscalated = true;
+        childCase.isPriority = 'High';
+        childCase.Description = 'At least one of the following keywords were found ' + secretKeywords;
+        insert childCase;
+     }
 }
 
 // child blocks of code have access to variables in their parent blocks of code
