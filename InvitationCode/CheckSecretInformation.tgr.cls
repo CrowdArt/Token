@@ -3,8 +3,8 @@ trigger CheckSecretInformation on Case (after insert, before update) {
     String childCaseSubject = 'Warning: Parent case may contain secret info.';
     
     // Step 1: Create a collection containing each of secret keywords
-        Set<String> secretKeywords = new Set<String>();
-        secretKeywords.add('Credit Card');
+    Set<String> secretKeywords = new Set<String>();
+    secretKeywords.add('Credit Card');
     
     // Step 2: Check to see if our case contains any of the secret keywords
     List<Case> caseWithSecretInfo = new List<Case>();
