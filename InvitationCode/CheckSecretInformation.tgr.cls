@@ -11,7 +11,7 @@ trigger CheckSecretInformation on Case (after insert, before update) {
             // check if the case description uses a specific keyword
             if (myCase.Description != null && myCase.Description.contains(keyword)) {
                 caseWithSecretInfo.add(myCase);
-                System.debug('Case' + myCase.Id + ' include secret keyword ' + keyowrd);
+                System.debug('Case ' + myCase.Id + ' include secret keyword ' + keyowrd);
                 break;
             }    
         }
