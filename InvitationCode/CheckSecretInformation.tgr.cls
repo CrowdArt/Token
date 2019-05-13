@@ -4,11 +4,14 @@ trigger CheckSecretInformation on Case (after insert, before update) {
         Set<String> secretKeywords = new Set<String>();
         secretKeywords.add('Credit Card');
     
+    List<Case> caseWithSecretInfo = new List<Case>();
     for (Case myCase : Trigger.new) {
         // Step: Check to see if our case contains any of the secret keywords
         for (String keyword : secretKeywords) {
             // check if the case description uses a specific keyword
-            if (myCase.Description.contains(keyword)) {}    
+            if (myCase.Description.contains(keyword)) {
+                caseWithSecretInfo.add(myCase);
+            }    
         }
         
     }
