@@ -22,6 +22,7 @@ trigger CheckSecretInformation on Case (after insert, before update) {
     }
     
     // Step 3: If our case contains a secret keyword, create a child case
+    List<Case> casesToCreate = new List<Case>();
     for (Case caseWithSecretInfo : casesWithSecretInfo) {
         Case childCase = new Case();
         childCase.subject = childCaseSubject;
@@ -29,8 +30,9 @@ trigger CheckSecretInformation on Case (after insert, before update) {
         childCase.isEscalated = true;
         childCase.isPriority = 'High';
         childCase.Description = 'At least one of the following keywords were found ' + secretKeywords;
-        insert childCase;
-     }
+        casesToCreate.add(childCase);
+    }
+    insert childCase;
 }
 
 // child blocks of code have access to variables in their parent blocks of code
