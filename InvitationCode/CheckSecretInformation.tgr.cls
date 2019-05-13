@@ -22,3 +22,5 @@ trigger CheckSecretInformation on Case (after insert, before update) {
 
 // check if the case description uses a specific keyword
 // if the case description contains the secret keyword we need to create a child case.
+// one block of code should do one thing
+// generally SObjects work better in Lists
