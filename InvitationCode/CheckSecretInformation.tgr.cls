@@ -1,5 +1,7 @@
 trigger CheckSecretInformation on Case (after insert, before update) {
     
+    String childCaseSubject = 'Warning: Parent case may contain secret info.';
+    
     // Step 1: Create a collection containing each of secret keywords
         Set<String> secretKeywords = new Set<String>();
         secretKeywords.add('Credit Card');
@@ -7,20 +9,22 @@ trigger CheckSecretInformation on Case (after insert, before update) {
     // Step 2: Check to see if our case contains any of the secret keywords
     List<Case> caseWithSecretInfo = new List<Case>();
     for (Case myCase : Trigger.new) {
-        for (String keyword : secretKeywords) {
-            // check if the case description uses a specific keyword
-            if (myCase.Description != null && myCase.Description.containsIgnoreCase(keyword)) {
-                caseWithSecretInfo.add(myCase);
-                System.debug('Case ' + myCase.Id + ' include secret keyword ' + keyowrd);
-                break;
-            }    
+        if (myCase.Subject != childCaseSubject) {
+            for (String keyword : secretKeywords) {
+                // check if the case description uses a specific keyword
+                if (myCase.Description != null && myCase.Description.containsIgnoreCase(keyword)) {
+                    caseWithSecretInfo.add(myCase);
+                    System.debug('Case ' + myCase.Id + ' include secret keyword ' + keyowrd);
+                    break;
+                }    
+            }
         }
     }
     
     // Step 3: If our case contains a secret keyword, create a child case
     for (Case caseWithSecretInfo : casesWithSecretInfo) {
         Case childCase = new Case();
-        childCase.subject = 'Warning: Parent case may contain secret info.';
+        childCase.subject = childCaseSubject;
         childCase.ParentId = caseWithSecretInfo.Id;
         childCase.isEscalated = true;
         childCase.isPriority = 'High';
