@@ -47,3 +47,12 @@ trigger CheckSecretInformation on Case (after insert, before update) {
 // generally SObjects work better in Lists
 
 // if our case contains the secret keyword add it to the List<Case>
+
+/**
+* Test class requirements:
+* 1. Create or update a case
+* 2. Case subject cannot begin with warning
+* 3. Case description cannot be null
+* 4. Case description contains a secret keyword
+*/
+
