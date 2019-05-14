@@ -75,6 +75,7 @@ Pull requests: A pull request is a package of commits you’re requesting to be 
 * Link your local Git repository with your remote GitHub repository. Make sure to replace YOUR_GITHUB_USERNAME with your actual GitHub username: `git remote add origin https://github.com/YOUR_GITHUB_USERNAME/sfdx-project.git`
 * Push local commits (your file revisions) to the master branch on GitHub: `git push origin master`
 * switch to the Git branch named master: `git checkout master`
+* Pull remote commits from the master branch on GitHub: `git pull origin master`
 
 ## JavaScript
 * [document.getElementById() method](https://www.javatpoint.com/document-getElementById()-method)
