@@ -73,6 +73,7 @@ Pull requests: A pull request is a package of commits you’re requesting to be 
 *  network commands in Git: `git clone`, `git fetch`, `git pull`, and `git push`.
 * [gpg cheatsheet](http://irtfweb.ifa.hawaii.edu/~lockhart/gpg/)
 * Link your local Git repository with your remote GitHub repository. Make sure to replace YOUR_GITHUB_USERNAME with your actual GitHub username: `git remote add origin https://github.com/YOUR_GITHUB_USERNAME/sfdx-project.git`
+* Push local commits (your file revisions) to the master branch on GitHub: `git push origin master`
 
 ## JavaScript
 * [document.getElementById() method](https://www.javatpoint.com/document-getElementById()-method)
