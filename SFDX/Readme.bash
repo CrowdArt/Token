@@ -22,4 +22,3 @@
 * sfdx force:apex:test:run --resultformat human vuk.djukic_external.k2@coinbase.com.onb2.onbvuk2
 * sfdx force:auth:web:login --setalias my-sandbox
 * 
-
