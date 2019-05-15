@@ -6,7 +6,6 @@ global without sharing class onb_LightningSelfRegisterController extends onb_Bas
 	}
 
     public onb_LightningSelfRegisterController() {
-
     }
 
     /**
