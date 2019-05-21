@@ -68,6 +68,10 @@ Field history tracking records (such as AccountHistory) can't be created in test
 * LightningSelfRegisterControllerTest.testGetExtraFieldsInSelfRegistration
 * LightningSelfRegisterControllerTest.testIsValidPassword
 
+* {!v.attributeName} - points to attribute name in <aura:attribute> tag.
+* event.getSource() - source is the thing that generated the event.
+    * gets us a reference to the specific <lightning:button> that was clicked.
+
 ## Git
 Pull requests: A pull request is a package of commits you’re requesting to be merged into the default branch. A pull request provides a place to discuss the changes you’re proposing and invite other team members to comment and complete code reviews. Pull requests also help you see the result of automated tests and many other cool integrations.
 *  network commands in Git: `git clone`, `git fetch`, `git pull`, and `git push`.
