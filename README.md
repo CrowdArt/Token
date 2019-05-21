@@ -57,6 +57,12 @@ Field history tracking records (such as AccountHistory) can't be created in test
 # Aura
 ## Validating Fields
 * [Validating Fields](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/js_validate_fields.htm)
+* [Constraint validation API](https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation)
+* [Input Number](https://developer.salesforce.com/docs/component-library/bundle/ui:inputNumber/documentation)
+* [Input](https://developer.salesforce.com/docs/component-library/bundle/lightning:input/documentation)
+* [Validation Error](https://developer.salesforce.com/docs/component-library/bundle/ui:validationError/documentation)
+* [Alternate/Workaround for contains() function in aura:if Condition in LightningComponent(http://sfdcmonkey.com/2018/01/06/workaround-for-contains-lightning-component/)
+
 ### LightningSelfRegisterController
 * LightningSelfRegisterControllerTest.testSelfRegisterWithCreatedAccount
 * LightningSelfRegisterControllerTest.testGetNonEmptyExtraFields
@@ -81,6 +87,7 @@ Pull requests: A pull request is a package of commits you’re requesting to be 
 * switch to the Git branch named master: `git checkout master`
 * Pull remote commits from the master branch on GitHub: `git pull origin master`
 * `git rev-parse --abbrev-ref HEAD` - show current branch
+* [Git Commands](https://github.com/CrowdArt/Git-Commands)
 
 ## JavaScript
 * [document.getElementById() method](https://www.javatpoint.com/document-getElementById()-method)
