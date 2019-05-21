@@ -62,6 +62,7 @@ Field history tracking records (such as AccountHistory) can't be created in test
 * [Input](https://developer.salesforce.com/docs/component-library/bundle/lightning:input/documentation)
 * [Validation Error](https://developer.salesforce.com/docs/component-library/bundle/ui:validationError/documentation)
 * [Alternate/Workaround for contains() function in aura:if ConditionLightningComponent](http://sfdcmonkey.com/2018/01/06/workaround-for-contains-lightning-component/)
+* [Working with Base Lightning Components](https://developer.salesforce.com/docs/atlas.en-us.218.0.lightning.meta/lightning/lightning_overview.htm)
 
 ### LightningSelfRegisterController
 * LightningSelfRegisterControllerTest.testSelfRegisterWithCreatedAccount
