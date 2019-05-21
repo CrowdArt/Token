@@ -76,6 +76,7 @@ Pull requests: A pull request is a package of commits you’re requesting to be 
 * Push local commits (your file revisions) to the master branch on GitHub: `git push origin master`
 * switch to the Git branch named master: `git checkout master`
 * Pull remote commits from the master branch on GitHub: `git pull origin master`
+* `git rev-parse --abbrev-ref HEAD` - show current branch
 
 ## JavaScript
 * [document.getElementById() method](https://www.javatpoint.com/document-getElementById()-method)
