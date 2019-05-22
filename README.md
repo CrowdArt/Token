@@ -18,6 +18,7 @@
 * [Onboarding Application](#onboarding-application)
 * [OOP](#oop)
 * [Salesforce Community](#salesforce-community)
+* [SFDC Rule Engine](#sfdc-rule-engine)
 #
 
 ## Apex Best Practices
@@ -156,6 +157,11 @@ https://onb-coinbase.cs97.force.com/onboarding/s/RegisterEntityDetails?b=null
 * [Set Up Self-Registration for Your Community](https://help.salesforce.com/articleView?id=networks_customize_selfreg_page.htm&type=5)
 * [Set Up and Manage Salesforce Communities Winter ’19](chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/https://resources.docs.salesforce.com/216/latest/en-us/sfdc/pdf/communities.pdf)
 * [Set Up and Manage Salesforce Communities](https://help.salesforce.com/articleView?id=networks_overview.htm&type=5)
+* [Experience Faster Community Performance with Free Content Delivery Network](https://releasenotes.docs.salesforce.com/en-us/winter18/release-notes/rn_networks_cdn.htm)
+
+## SFDC Rule Engine
+* [SFDCRules – Simple yet powerful Rule Engine for Salesforce](https://www.jitendrazaa.com/blog/salesforce/sfdcrules-simple-yet-powerful-rule-engine-for-salesforce/?subscribe=success#blog_subscription-2)
+
 
 ## Version Control System - VCS
 ### Source of Truth
