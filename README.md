@@ -155,6 +155,7 @@ https://onb-coinbase.cs97.force.com/onboarding/s/RegisterEntityDetails?b=null
 * [Lightning Communities Developer Guide Version 44.0 Winter ’19](chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/https://resources.docs.salesforce.com/216/latest/en-us/sfdc/pdf/communities_dev.pdf)
 * [Set Up Self-Registration for Your Community](https://help.salesforce.com/articleView?id=networks_customize_selfreg_page.htm&type=5)
 * [Set Up and Manage Salesforce Communities Winter ’19](chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/https://resources.docs.salesforce.com/216/latest/en-us/sfdc/pdf/communities.pdf)
+* [Set Up and Manage Salesforce Communities](https://help.salesforce.com/articleView?id=networks_overview.htm&type=5)
 
 ## Version Control System - VCS
 ### Source of Truth
