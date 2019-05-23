@@ -158,6 +158,10 @@ https://onb-coinbase.cs97.force.com/onboarding/s/RegisterEntityDetails?b=null
 * [Set Up and Manage Salesforce Communities Winter ’19](chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/https://resources.docs.salesforce.com/216/latest/en-us/sfdc/pdf/communities.pdf)
 * [Set Up and Manage Salesforce Communities](https://help.salesforce.com/articleView?id=networks_overview.htm&type=5)
 * [Experience Faster Community Performance with Free Content Delivery Network](https://releasenotes.docs.salesforce.com/en-us/winter18/release-notes/rn_networks_cdn.htm)
+* [Manage Your Domains](https://help.salesforce.com/articleView?id=domain_mgmt_overview.htm&type=5)
+* [Site.com](https://help.salesforce.com/articleView?id=siteforce_overview.htm&type=5)
+* [Deleting Custom URLs](https://help.salesforce.com/articleView?id=domain_mgmt_url_delete.htm&type=5)
+
 
 ## SFDC Rule Engine
 * [SFDCRules – Simple yet powerful Rule Engine for Salesforce](https://www.jitendrazaa.com/blog/salesforce/sfdcrules-simple-yet-powerful-rule-engine-for-salesforce/?subscribe=success#blog_subscription-2)
