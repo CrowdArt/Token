@@ -1,0 +1,37 @@
+As a Coinbase UX Designer, I want the application owners tables to use my design guideline so that the application looks more presentable to users filling out applications.
+
+Acceptance Criteria:
+
+When a user is filling out an application and has to enter in details related to an owner, they see 2 different owners tables depending on the type of data requested:
+
+Table 1 (Simple Owner table): https://balsamiq.cloud/s5p0e30/p3czu2u/rAB91
+
+Table 2 (Simple 2 Owner table): https://balsamiq.cloud/s5p0e30/p3czu2u/rD8C2
+
+Table 3 (Complex Owner table): https://balsamiq.cloud/s5p0e30/p3czu2u/r19B4
+
+Within each table the user can:
+
+Fill out all fields which save to the related/tagged Owner record in Salesforce
+
+Click Plus (below the table):
+
+Clicking plus adds the exact same table immediately below the previous table including all Field names/documents
+
+It creates a new Owner record in Salesforce
+
+Plus button continues to drop below each new Owner Table
+
+Click Trash (within every table)
+
+Clicking Trash deletes the table from the User to see
+
+Clicking Trash also deletes the record from Salesforce
+
+Within Table the field names appear above and within the entry boxes. 
+
+When the user types they go away
+
+When the user removes everything they reappear
+
+Within the Table the user sees Headings
