@@ -1,0 +1,7 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<aura:attribute name="greeting" type="String" default="Real Estate" />
+    
+    <div class="slds-card__body slds-card__body_inner slds-p-top_medium">Crowdart {!v.greeting}</div>
+    <input class="slds-input" aura:id="myInput" type="text" />
+	<button class="slds-button slds-button_brand slds-m-top_small" name="Update" type="submit" onclick="{!c.updateValue}">Update</button>
+</aura:component>
