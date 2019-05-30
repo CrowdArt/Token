@@ -10,6 +10,7 @@
    * [Run Unit Tests](#run-unit-tests)
 * [Aura](#aura)
    * [Validating Fields](#validating-fields)
+* [Community Cloud](#community-cloud)
 * [Courses](#courses)
 * [Git](#git)
 * [JavaScript](#javascript)
@@ -55,8 +56,8 @@ Field history tracking records (such as AccountHistory) can't be created in test
 * Some or all methods in a set of classes
 * A predefined suite of classes, known as a test suite
 * All unit tests in your org
-# Aura
-## Validating Fields
+## Aura
+### Validating Fields
 * [Validating Fields](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/js_validate_fields.htm)
 * [Constraint validation API](https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation)
 * [Input Number](https://developer.salesforce.com/docs/component-library/bundle/ui:inputNumber/documentation)
@@ -79,7 +80,8 @@ Field history tracking records (such as AccountHistory) can't be created in test
 * {!v.attributeName} - points to attribute name in <aura:attribute> tag.
 * event.getSource() - source is the thing that generated the event.
     * gets us a reference to the specific <lightning:button> that was clicked.
-
+## Community Cloud
+* [Community Cloud Home Page](http://pages.mail.salesforce.com/gettingstarted/community-cloud/)
 ## Git
 Pull requests: A pull request is a package of commits you’re requesting to be merged into the default branch. A pull request provides a place to discuss the changes you’re proposing and invite other team members to comment and complete code reviews. Pull requests also help you see the result of automated tests and many other cool integrations.
 *  network commands in Git: `git clone`, `git fetch`, `git pull`, and `git push`.
