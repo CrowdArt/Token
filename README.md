@@ -14,7 +14,7 @@
 * [Courses](#courses)
 * [Git](#git)
 * [JavaScript](#javascript)
-* [LDS]
+* [LDS](#lds)
 * [Links](#links)
 * [Notes](#notes)
 * [Onboarding Application](#onboarding-application)
