@@ -14,6 +14,7 @@
 * [Courses](#courses)
 * [Git](#git)
 * [JavaScript](#javascript)
+* [LDS]
 * [Links](#links)
 * [Notes](#notes)
 * [Onboarding Application](#onboarding-application)
@@ -101,6 +102,14 @@ Pull requests: A pull request is a package of commits you’re requesting to be 
 * Application owner object - coinbase inc questionnaire (applying in us)
 * Rules engine - sync up with Josh
 * Placeholder for Coinbase in or Coinbase UK
+
+## LDS
+Lightning Data Service (LDS) serves as the data layer for Lightning. 
+* LDS is the Lightning Components counterpart to the Visualforce standard controller, providing access to the data displayed on a page. 
+* Without LDS, each component within an app makes independent calls to the server to perform CRUD operations on a record, even if all components in the app pull from the same record data. 
+* Each server call reduces performance. 
+* These independent server calls can also lead to inconsistencies, creating situations where a server call refreshes one component, leaving other components out of date.
+
 
 ## OOP
 Every class has three components to it: [1] Attributes, [2] Methods, and [3] Constructors.
