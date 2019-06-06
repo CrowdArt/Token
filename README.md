@@ -109,6 +109,17 @@ Lightning Data Service (LDS) serves as the data layer for Lightning.
 * Without LDS, each component within an app makes independent calls to the server to perform CRUD operations on a record, even if all components in the app pull from the same record data. 
 * Each server call reduces performance. 
 * These independent server calls can also lead to inconsistencies, creating situations where a server call refreshes one component, leaving other components out of date.
+* Lightning Data Service identifies and eliminates requests that involve the same record data, sending a single shared data request that updates all relevant components. 
+* It provides a way to cache data to work offline in case the user gets disconnected, intelligently syncing the data once the connection is restored.
+Lightning Data Service provides reusable Aura components that:
+* Minimize XMLHttpRequests (XHRs)
+* Fetch records once, reducing network transfers, app server load, and database server load
+* Cache record data on the client, separate from component metadata
+* Share record data across components
+* Enable progressive record loading, caching, and merging more fields and layouts into the cache
+* Enable proactive cache population
+* Promote consistency by using only one instance of the record data across multiple components
+* Create notifications when record data changes
 
 
 ## OOP
