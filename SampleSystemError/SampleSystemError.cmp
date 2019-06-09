@@ -1,0 +1,7 @@
+<aura:component controller=”SampleServerSideController”>
+       <aura:attribute name=”message” type=”String”/>
+       <ui: button label=”GO” press=”{!c.validate}”/>
+       <div>
+          ResultMessage:<ui:outputText value=”{!v.message}”/>
+       </div>
+</aura:component>
