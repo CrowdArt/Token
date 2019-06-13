@@ -22,3 +22,9 @@
 * sfdx force:apex:test:run --resultformat human vuk.djukic_external.k2@coinbase.com.onb2.onbvuk2
 * sfdx force:auth:web:login --setalias my-sandbox
 * 
+#
+* sfdx force:lightning:component:create -n myFirstWebComponent -d force-app/main/default/lwc --type lwc
+  * -n — This defines the name of the Lightning web component folder and its files
+  * -d — This defines the target directory where the Lightning web component should be created. The target directory must be named lwc
+  * --type — This specifies that you want to create a Lightning Web Component
+
