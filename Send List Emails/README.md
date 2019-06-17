@@ -12,3 +12,7 @@
   * A recipient selected Don’t Market.
   * A recipient selected Forget this Individual.
   * The Individual record is missing.
+* Reps can use Salesforce Classic to view list email activity in the Activity History list.
+* You can’t send a list email using a Classic Visualforce email template. 
+* Classic Visualforce email templates aren’t supported in the Lightning List Email action.
+### [Enable List Email](https://help.salesforce.com/articleView?id=email_list_email_enable.htm&type=5)
