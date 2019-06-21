@@ -1,1 +1,2 @@
 * [Case Management Implementation Guide](https://blog.bessereau.eu/assets/pdfs/salesforce_case_implementation_guide.pdf)
+* Salesforce.com automatically created the following email service address for you: custody-updates@w-365zl43jxhmlglslntansx2dzooquhdgl8y63u3ki87gbi3m22.c-3knaoeaa.cs14.case.sandbox.salesforce.com. Configure your email system to forward messages received at vuk.djukic_external.k2@coinbase.com to this email services address.
