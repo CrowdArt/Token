@@ -1,0 +1,4 @@
+select Assignee.Name, Assignee.Email, PermissionSet.Name, Assignee.UserRole.name, Assignee.LastLoginDate, Assignee.Manager_Name__c, Assignee.ManagerId, PermissionSet.Label, PermissionSet.Profile.Name, Assignee.Profile.Name
+from PermissionSetAssignment
+WHERE Assignee.IsActive = TRUE
+order by Assignee.Name, PermissionSet.Name
