@@ -4,6 +4,7 @@
 * [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.220.0.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
 * [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.220.0.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
 
+## Commands
 * `sfdx force:org:list --verbose`
 * sfdx force:apex:trigger:create -n mytrigger -s Account -e 'before insert, after upsert' -d <app-dir>/main/default/triggers
 * sfdx force:mdapi:deploy -c --help
@@ -30,10 +31,10 @@
 * sfdx force:apex:test:run --resultformat human vuk.djukic_external.k2@coinbase.com.onb2.onbvuk2
 * sfdx force:auth:web:login --setalias my-sandbox
 #
-* sfdx force:lightning:component:create -n myFirstWebComponent -d force-app/main/default/lwc --type lwc
-  * -n — This defines the name of the Lightning web component folder and its files
-  * -d — This defines the target directory where the Lightning web component should be created. The target directory must be named lwc
-  * --type — This specifies that you want to create a Lightning Web Component
+* `sfdx force:lightning:component:create -n myFirstWebComponent -d force-app/main/default/lwc --type lwc`
+  * `-n` — This defines the name of the Lightning web component folder and its files
+  * `-d` — This defines the target directory where the Lightning web component should be created. The target directory must be named lwc
+  * `--type` — This specifies that you want to create a Lightning Web Component
 #
 
 ### Create a scratch org with the alias GeoAppScratch:
