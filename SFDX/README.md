@@ -35,3 +35,9 @@
 ### Test the JWT Auth Flow
 `sfdx force:auth:jwt:grant --clientid ${CONSUMER_KEY} --username ${HUB_USERNAME} \
 --jwtkeyfile ${JWT_KEY_FILE} --setdefaultdevhubusername`
+### Help
+* All the available topics: `sfdx force --help`
+* All available commands: `sfdx force:doc:commands:list`
+### Log In to the Dev Hub
+* `sfdx force:auth:web:login -h`
+* `sfdx force:auth:web:login --help`
