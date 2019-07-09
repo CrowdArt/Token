@@ -1,0 +1,5 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+	<div style="margin-top:8px; margin-bottom:24px;" class="slds-align--absolute-center">
+        <p style="color: #6E757B">Already have an account? <a href="https://institutional.coinbase.com/business-onboarding/s/login"> Sign Up</a></p>
+    </div>
+</aura:component>
