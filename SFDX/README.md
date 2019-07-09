@@ -47,6 +47,10 @@
 ### Create a project (geolocation)
 * `sfdx force:project:create -n geolocation`
 
+### Create Aura component
+* Create the AccountMap component in the aura folder: `sfdx force:lightning:component:create -n AccountMap -d force-app/main/default/aura`
+* Push your new code to the org: `sfdx force:source:push`
+
 ### Create Sample Data
 * Create the Marriott Marquis account: `sfdx force:data:record:create -s Account -v 'Name="Marriott Marquis" BillingStreet="780 Mission St" BillingCity="San Francisco" BillingState="CA" BillingPostalCode="94103" Phone="(415) 896-1600" Website="www.marriott.com"'`
 #### Export sample data:
