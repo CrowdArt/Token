@@ -49,8 +49,10 @@
 
 ### Create Sample Data
 * Create the Marriott Marquis account: `sfdx force:data:record:create -s Account -v 'Name="Marriott Marquis" BillingStreet="780 Mission St" BillingCity="San Francisco" BillingState="CA" BillingPostalCode="94103" Phone="(415) 896-1600" Website="www.marriott.com"'`
-* 
-
+#### Export sample data:
+* `sfdx force:data:tree:export -q "SELECT Name, BillingStreet, BillingCity, BillingState, BillingPostalCode, Phone, Website FROM Account WHERE BillingStreet != NULL AND BillingCity != NULL and BillingState != NULL" -d ./data`
+#### Import sample data:
+* `sfdx force:data:tree:import --sobjecttreefiles data/Account.json`
 ### Open your Dev Hub org.
 * If you already authorized the Dev Hub, open it: `sfdx force:org:open -u DevHub`
 * If you haven’t yet logged in to your Dev Hub org: `sfdx force:auth:web:login -d -a DevHub`
