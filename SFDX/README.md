@@ -44,10 +44,10 @@
 * `sfdx force:auth:web:login --help`
 
 ### Log In to Sandboxes
-sfdx force:auth:web:login -r https://test.salesforce.com -a FullSandbox
-sfdx force:auth:web:login -r https://test.salesforce.com -a DevSandbox
+* `sfdx force:auth:web:login -r https://test.salesforce.com -a FullSandbox`
+* `sfdx force:auth:web:login -r https://test.salesforce.com -a DevSandbox`
 
 ### Aliasing
-sfdx force:org:open -u FullSandbox
-sfdx force:org:open -u MyScratchOrg
-sfdx force:limits:api:display -u DevSandbox
+* `sfdx force:org:open -u FullSandbox`
+* `sfdx force:org:open -u MyScratchOrg`
+* `sfdx force:limits:api:display -u DevSandbox`
