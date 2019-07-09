@@ -31,4 +31,7 @@
 ### Open your Dev Hub org.
 * If you already authorized the Dev Hub, open it: `sfdx force:org:open -u DevHub`
 * If you haven’t yet logged in to your Dev Hub org: `sfdx force:auth:web:login -d -a DevHub`
- 
+* List your orgs: `sfdx force:org:list`
+### Test the JWT Auth Flow
+`sfdx force:auth:jwt:grant --clientid ${CONSUMER_KEY} --username ${HUB_USERNAME} \
+--jwtkeyfile ${JWT_KEY_FILE} --setdefaultdevhubusername`
