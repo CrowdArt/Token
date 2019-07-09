@@ -1,3 +1,4 @@
+* `sfdx force:org:list --verbose`
 * sfdx force:apex:trigger:create -n mytrigger -s Account -e 'before insert, after upsert' -d <app-dir>/main/default/triggers
 * sfdx force:mdapi:deploy -c --help
 * sfdx force:mdapi:deploy:report vuk.djukic_external.k2@coinbase.com.onb --help
