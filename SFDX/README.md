@@ -1,3 +1,7 @@
+* [Salesforce DX Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.220.0.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
+* [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.220.0.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+* [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.220.0.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
+
 * `sfdx force:org:list --verbose`
 * sfdx force:apex:trigger:create -n mytrigger -s Account -e 'before insert, after upsert' -d <app-dir>/main/default/triggers
 * sfdx force:mdapi:deploy -c --help
@@ -30,8 +34,19 @@
   * --type — This specifies that you want to create a Lightning Web Component
 #
 
+### Create a scratch org with the alias GeoAppScratch:
+* `sfdx force:org:create -s -f config/project-scratch-def.json -a GeoAppScratch`
+  * `-s` option indicates that you want this scratch org to be the default org for this project when running Salesforce CLI commands.
+  * To use a different org on a per command basis, you can specify the `-u` argument and specify another alias.
+  * `-f` option is the path to the project scratch org configuration file.
+  * `-a` refer to the org using its alias.
+
 ### Create a project (geolocation)
 * `sfdx force:project:create -n geolocation`
+
+### Create Sample Data
+* Create the Marriott Marquis account: `sfdx force:data:record:create -s Account -v 'Name="Marriott Marquis" BillingStreet="780 Mission St" BillingCity="San Francisco" BillingState="CA" BillingPostalCode="94103" Phone="(415) 896-1600" Website="www.marriott.com"'`
+* 
 
 ### Open your Dev Hub org.
 * If you already authorized the Dev Hub, open it: `sfdx force:org:open -u DevHub`
