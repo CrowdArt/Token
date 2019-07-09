@@ -27,3 +27,8 @@
   * -n — This defines the name of the Lightning web component folder and its files
   * -d — This defines the target directory where the Lightning web component should be created. The target directory must be named lwc
   * --type — This specifies that you want to create a Lightning Web Component
+#
+### Open your Dev Hub org.
+* If you already authorized the Dev Hub, open it: `sfdx force:org:open -u DevHub`
+* If you haven’t yet logged in to your Dev Hub org: `sfdx force:auth:web:login -d -a DevHub`
+ 
