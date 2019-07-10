@@ -92,8 +92,8 @@
 ## Deploy metadata to an org using Metadata API
 
 USAGE
-  $ sfdx force:mdapi:deploy [-c | -i <id>] [-d <directory> | -f <filepath>] [-w <minutes>] [-l 
-  NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg] [-r <array>] [-e true|false] [-o] [-g] [-q <id>] [-u <string>] [--apiversion 
+$ sfdx force:mdapi:deploy [-c | -i <id>] [-d <directory> | -f <filepath>] [-w <minutes>] [-l 
+NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg] [-r <array>] [-e true|false] [-o] [-g] [-q <id>] [-u <string>] [--apiversion 
   <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
