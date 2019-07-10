@@ -4,7 +4,12 @@
 * [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.220.0.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
 * [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.220.0.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
 
+## Create App
+* `sfdx force:apex:class:create -n AccountSearchController -d force-app/main/default/classes`
+
+
 ## Commands
+* Display API limits: `sfdx force:limits:api:display -u DevHub`
 * `sfdx force:org:list --verbose`
 * sfdx force:apex:trigger:create -n mytrigger -s Account -e 'before insert, after upsert' -d <app-dir>/main/default/triggers
 * sfdx force:mdapi:deploy -c --help
