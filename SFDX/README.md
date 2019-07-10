@@ -88,3 +88,61 @@
 * `sfdx force:org:open -u FullSandbox`
 * `sfdx force:org:open -u MyScratchOrg`
 * `sfdx force:limits:api:display -u DevSandbox`
+
+## Deploy metadata to an org using Metadata API
+
+USAGE
+  $ sfdx force:mdapi:deploy [-c | -i <id>] [-d <directory> | -f <filepath>] [-w <minutes>] [-l 
+  NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg] [-r <array>] [-e true|false] [-o] [-g] [-q <id>] [-u <string>] [--apiversion 
+  <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+
+OPTIONS
+  -c, --checkonly                                                                   validate deploy but don’t save to the org
+  -d, --deploydir=deploydir                                                         root of directory tree of files to deploy
+  -e, --rollbackonerror=(true|false)                                                (deprecated) roll back deployment for any failure
+  -f, --zipfile=zipfile                                                             path to .zip file of metadata to deploy
+
+  -g, --ignorewarnings                                                              whether a warning will allow a deployment to complete 
+                                                                                    successfully
+
+  -i, --jobid=jobid                                                                 (deprecated) job ID of the deployment you want to check; 
+                                                                                    defaults to your most recent CLI deployment if not 
+                                                                                    specified
+
+  -l, --testlevel=(NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg)      deployment testing level
+
+  -o, --ignoreerrors                                                                ignore any errors and do not roll back deployment
+
+  -q, --validateddeployrequestid=validateddeployrequestid                           request ID of the validated deployment to run a Quick 
+                                                                                    Deploy
+
+  -r, --runtests=runtests                                                           tests to run if --testlevel RunSpecifiedTests
+
+  -u, --targetusername=targetusername                                               username or alias for the target org; overrides default 
+                                                                                    target org
+
+  -w, --wait=wait                                                                   wait time for command to finish in minutes (default: 0)
+
+  --apiversion=apiversion                                                           override the api version used for api requests made by 
+                                                                                    this command
+
+  --json                                                                            format output as json
+
+  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for this command invocation
+
+  --verbose                                                                         verbose output of deploy results
+
+DESCRIPTION
+  Specify the location of the files to deploy as a .zip file or by the root of the directory tree containing the files. To check the status 
+  of a deployment, specify its job ID. To run quick deploy of a recently validated package, use --validateddeployrequestid with the validated 
+  ID.
+
+  The default value of --rollbackonerror is true, but the corresponding parameter in the Metadata API deploy() call defaults to false.
+
+  To wait for the command to finish running no matter how long the deployment takes, set --wait to -1: "sfdx force mdapi:deploy -w -1 ...".
+
+COMMANDS
+  force:mdapi:deploy:cancel  cancel a metadata deployment
+  force:mdapi:deploy:report  check the status of a metadata deployment
+
+
