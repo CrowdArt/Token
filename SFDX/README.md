@@ -6,6 +6,7 @@
 
 ## Create App
 * `sfdx force:apex:class:create -n AccountSearchController -d force-app/main/default/classes`
+* Create a scratch org with the alias GeoAppScratch: `sfdx force:org:create -s -f config/project-scratch-def.json -a GeoAppScratch`
 
 
 ## Commands
