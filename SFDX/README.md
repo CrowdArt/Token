@@ -6,7 +6,7 @@
 
 ## Create App
 * `sfdx force:apex:class:create -n AccountSearchController -d force-app/main/default/classes`
-* Create a scratch org with the alias GeoAppScratch: `sfdx force:org:create -s -f config/project-scratch-def.json -a GeoAppScratch`
+* Create an org with the alias GeoAppScratch: `sfdx force:org:create -s -f config/sfdx-project.json -a GeoApp`
 * `sfdx force:org:create --setdefaultusername -f config/project-scratch-def.json --setalias my-scratch-org`
 
 
@@ -32,6 +32,7 @@
 * sfdx force:auth:web:login -r https://test.salesforce.com
 * code . src/onb_ApplicationFormControllerTest
 * sfdx force:apex:test:run -u vuk.djukic_external.k2@coinbase.com.onb2.onbvuk2 --testlevel=RunLocalTests
+  * `sfdx force:apex:test:run -u vuk1@crowdart.io --testlevel=RunLocalTests`
 * sfdx force:mdapi:deploy -d src/ -u staging --testLevel=RunLocalTests
 * sfdx force:apex:test:run --help
 * sfdx force:config:list
@@ -50,6 +51,7 @@
   * To use a different org on a per command basis, you can specify the `-u` argument and specify another alias.
   * `-f` option is the path to the project scratch org configuration file.
   * `-a` refer to the org using its alias.
+  * `sfdx force:org:create -s -f config/
 
 ### Create a project (geolocation)
 * `sfdx force:project:create -n geolocation`
