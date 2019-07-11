@@ -1,5 +1,5 @@
 @IsTest(SeeAllData = true)
-public with sharing class LightningForgotPasswordControllerTest {
+public with sharing class onb_ForgotPasswordControllerTest {
 
  /* Verifies that onb_ForgotPasswordController handles invalid usernames appropriately */
  @IsTest
