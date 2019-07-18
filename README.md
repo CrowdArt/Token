@@ -19,6 +19,7 @@
 * [Notes](#notes)
 * [Onboarding Application](#onboarding-application)
 * [OOP](#oop)
+* [Open API](#open-api)
 * [Salesforce Community](#salesforce-community)
 * [SFDC Rule Engine](#sfdc-rule-engine)
 #
@@ -156,6 +157,9 @@ https://onb-coinbase.cs97.force.com/onboarding/s/
 https://onb-coinbase.cs97.force.com/onboarding/s/login/SelfRegister
 ### Register Entity Details
 https://onb-coinbase.cs97.force.com/onboarding/s/RegisterEntityDetails?b=null
+
+## Open API
+* [Swagger / Open API + Salesforce = LIKE](https://andyinthecloud.com/2017/09/30/swagger-open-api-salesforce-like/)
 
 #### Pages:
 * Check Password
