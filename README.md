@@ -160,6 +160,7 @@ https://onb-coinbase.cs97.force.com/onboarding/s/RegisterEntityDetails?b=null
 
 ## Open API
 * [Swagger / Open API + Salesforce = LIKE](https://andyinthecloud.com/2017/09/30/swagger-open-api-salesforce-like/)
+* [Connecting to Swagger-backed APIs with Clicks or Code](https://developer.salesforce.com/blogs/2018/04/connecting-to-swagger-backed-apis-with-clicks-or-code.html)
 
 #### Pages:
 * Check Password
