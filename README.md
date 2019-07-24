@@ -22,7 +22,7 @@
 * [Open API](#open-api)
 * [Salesforce Community](#salesforce-community)
 * [SFDC Rule Engine](#sfdc-rule-engine)
-#
+
 
 ## Apex Best Practices
 * Only use primitives in sets.
