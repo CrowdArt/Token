@@ -23,7 +23,6 @@
 * [Salesforce Community](#salesforce-community)
 * [SFDC Rule Engine](#sfdc-rule-engine)
 
-
 ## Apex Best Practices
 * Only use primitives in sets.
 * Best places to use `sets`:
