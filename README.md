@@ -26,6 +26,7 @@
 ## Apex Best Practices
 * Only use primitives in sets.
 * Best places to use `sets`:
+
   * Prevent and detect duplicate IDs
   * Use in queries (with `in` and `not in` term) to filter resutls
   * Convert a set to a list by passing it as a parameter to a list constructor
